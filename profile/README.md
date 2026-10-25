@@ -19,11 +19,16 @@ TS Series is a collection of small, focused TypeScript libraries and command-lin
 The libraries are written in modern JavaScript with static types, using native ES modules exclusively and no compatibility layers for older environments. Dependencies are kept to a minimum, and every library can be used on its own or combined with the others.
 
 
+## Security
+
+Most supply chain risks in the Node.js ecosystem come from deep dependency trees, because a single compromised package can reach every project that uses it. TS Series reduces this risk by keeping every library as simple as possible and free of dependencies. Where a dependency is unavoidable, it is limited to packages that have no dependencies themselves and that build on clean web standards, such as Hono. The code that ends up in a project therefore stays small and easy to audit, which makes the libraries suitable for security-critical areas such as finance.
+
+
 ## Runtime
 
-TS Series is built for Node.js, with every package distributed through npm. Several libraries began on Deno, but since its official development has been discontinued, the affected repositories have been migrated in full. Committing to a single runtime and registry also keeps the release pipelines simple. Bun, the only notable alternative, was designed as a drop-in replacement for Node.js, so the restriction costs little in practice.
+TS Series is built for Node.js, with every package distributed through npm. Several libraries began on Deno, but since its official development has been discontinued, the affected repositories have been migrated in full. Committing to a single runtime and registry also keeps the release pipelines simple, even though other runtimes might become usable in the future. Bun, for example, aims to be compatible with Node.js, so the libraries could run on it without any dedicated support, but it is not a supported target at the moment.
 
 
-## License
+## Licensing
 
-All libraries are released under the Unlicense.
+All libraries are released under either the 0BSD or the Apache License 2.0, at your choice. Contributions fall under the same terms, as described in [CONTRIBUTING.md](https://github.com/ts-series/.github/blob/main/CONTRIBUTING.md).
